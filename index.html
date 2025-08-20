@@ -11,9 +11,11 @@
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css'>
 <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Disket+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 <meta property="og:type" content="article" />
 <meta property="og:image" content="" />
 <meta property="og:title" content="Rodrigo Araujo" />
@@ -42,14 +44,14 @@
     /* Estilizando o botão dropdown */
     .dropdown {
         position: absolute;
-        top: 10px;  /* Alinhando no canto superior */
-        right: 10px; /* Alinhando no canto direito */
+        top: 10px;
+        right: 10px;
         display: inline-block;
-        z-index: 1000; /* Garante que o menu fique sobre outros elementos como o carrossel */
+        z-index: 1000;
     }
 
     .dropdown button {
-        background-color: #000; /* Botão preto */
+        background-color: #000;
         color: white;
         padding: 10px 20px;
         font-size: 16px;
@@ -66,6 +68,8 @@
         min-width: 160px;
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         z-index: 1;
+        border-radius: 5px; /* Adicionado para arredondar as bordas do menu */
+        overflow: hidden; /* Garante que os filhos respeitem o border-radius */
     }
 
     .dropdown-content a {
@@ -81,64 +85,77 @@
     }
 
     .dropdown:hover .dropdown-content {
-        display: block; /* Exibe as opções quando o mouse está sobre o botão */
+        display: block;
     }
 
     .dropdown button:hover {
-        background-color: #333; /* Altera a cor ao passar o mouse */
+        background-color: #333;
     }
+    
+    /* INÍCIO DA ALTERAÇÃO: Estilo específico para o botão WhatsApp */
+    .whatsapp-button {
+        background-color: #25d366 !important; /* Cor de fundo do WhatsApp */
+        color: white !important;             /* Cor do texto */
+    }
+    
+    .whatsapp-button:hover {
+        background-color: #128C7E !important; /* Cor mais escura ao passar o mouse */
+    }
+    /* FIM DA ALTERAÇÃO */
 
-    /* Estilo para os novos botões de certificação */
     .certification-button {
-        background-color: #343a40; /* Cor de fundo escura (cinza do Bootstrap --dark) */
-        color: white; /* Texto branco */
-        border: none; /* Sem borda */
-        padding: 5px 10px; /* Preenchimento interno reduzido */
-        font-size: 0.8em; /* Tamanho da fonte reduzido */
-        border-radius: 8px; /* Cantos arredondados reduzidos */
-        cursor: default; /* Cursor padrão, pois não é clicável */
-        font-family: 'Montserrat', sans-serif; /* Mesma família de fontes */
-        font-weight: 500; /* Peso da fonte */
-        margin-right: 3px; /* Espaço à direita entre os botões reduzido */
-        margin-bottom: 3px; /* Espaço abaixo para o caso de quebra de linha reduzido */
-        display: inline-block; /* Para que fiquem na mesma linha se houver espaço */
+        background-color: #343a40;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        font-size: 0.8em;
+        border-radius: 8px;
+        cursor: default;
+        font-family: 'Disket Mono', monospace;
+        font-weight: 500;
+        margin-right: 3px;
+        margin-bottom: 3px;
+        display: inline-block;
     }
-
-    /* Estilos para as tags de experiência */
+    
     .experience-tag {
         display: inline-block;
-        background-color: #e9ecef; /* Um cinza claro e neutro */
-        color: #495057;           /* Texto cinza escuro */
+        background-color: #e9ecef;
+        color: #495057;
         padding: 4px 8px;
         font-size: 0.78rem;
         border-radius: 4px;
         margin-right: 6px;
         margin-bottom: 6px;
-        font-family: 'Montserrat', sans-serif; /* Mesma família de fontes */
+        font-family: 'Disket Mono', monospace;
         font-weight: 500;
     }
 </style>
+
 </head>
+
 <body class="theme-default default-theme">
 <script src="js/shorby.js"></script> <div class="container smartpage-container">
 <header>
   <div class="dropdown">
     <button>Menu</button>
     <div class="dropdown-content">
-        <a href="https://sci.confea.org.br/carteiradigital/?q=3315429">CONFEA</a>
+        <a href="https://sci.confea.org.br/carteiradigital/?q=3116589">CONFEA</a>
         <a href="mailto:rodrigo@engenheiro.org">E-mail</a>
-        <a href="https://api.whatsapp.com/send/?phone=%2B5591954565209"><b>WhatsApp</b></a>
-    </div>
+        <a href="https://api.whatsapp.com/send/?phone=%2B5591954565209" class="whatsapp-button"><b>WhatsApp</b></a>
+        </div>
   </div>
+
     <br>
     <br>
+
     <li id="block0" class="links-block">
         <i title="" class="block-item layout-card" style="background-image:">
             <img src="https://sun9-47.userapi.com/impg/_EJ8pQhR2MKCS2kehHukaVhaf2Kn3jJOqYY3iw/Pvf-7mzHbmA.jpg?size=1080x1080&quality=95&sign=9aa4c2619fd844d0800962ba70b98e09&type=album" class="avatar" alt="Rodrigo Araujo" title="Rodrigo Araujo" />
         </i>
         <div class="bio-title">
-            <h1 align="right" style="font-size: 1.9rem;">Rodrigo M. Araujo</h1>
-            <div class="bio-description">
+            <h1 align="right" style="font-size: 2rem;"><b>Rodrigo M. Araujo</b></h1>
+            <div class="bio-description">  
                 <a>
                 Engenheiro Mecânico
                 <br>
@@ -168,9 +185,9 @@
            Responsável Técnico -<b> Vilhena Serviços</b>
             <br>
            <br>
-            Presidente @ <b>engenheiro.org LLC</b>
+            Presidente - <b>engenheiro.org LLC</b>
           <br>
-          Diretor Executivo @ <b>BENWIL Engineering LTD</b>
+          Diretor Executivo - <b>BENWIL Engineering LTD</b>
           <Br>
           <br>
             <p>
@@ -210,7 +227,6 @@
           <img src="https://img.shields.io/badge/ISO/Remote%20Work%20Professional%20Certification%20(RWPC)%E2%84%A2-343a40"/></a>
             </p>
           </div>
-          <br>
           
 
 <small>
@@ -234,11 +250,9 @@
     </div>
     </div>
     </div>
-    
     </header>
     </div>
     </div>
-    
     <script>
       function toggleCertificacoes() {
         var content = document.getElementById("certificacoes-content");
@@ -250,12 +264,5 @@
         content.style.display = content.style.display === "none" ? "block" : "none";
       }
     </script>
-    
-    
-    
     </body>
     </html>
-
-
-
-
