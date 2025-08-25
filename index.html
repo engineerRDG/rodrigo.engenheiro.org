@@ -98,6 +98,7 @@
         background-color: #333;
     }
     
+    /* INÍCIO DA ALTERAÇÃO: Estilo específico para o botão WhatsApp */
     .whatsapp-button {
         background-color: #25d366 !important; /* Cor de fundo do WhatsApp */
         color: white !important;             /* Cor do texto */
@@ -106,6 +107,7 @@
     .whatsapp-button:hover {
         background-color: #128C7E !important; /* Cor mais escura ao passar o mouse */
     }
+    /* FIM DA ALTERAÇÃO */
 
     .certification-button {
         background-color: #343a40;
@@ -170,8 +172,8 @@
                 <br>
                 <div style="text-align: center; margin-top: 8px;">
                     <div class="tags-container" style="margin-top: 5px;">
-                     <span class="experience-tag"><img src="https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/cidadania-fiscal/naf/nucleos/arquivos-e-imagens/para.png/@@images/image.png" alt="Bandeira do Pará" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 5px;">CREA/PA</span>
-                     <span class="experience-tag"><img src="https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/cidadania-fiscal/naf/nucleos/arquivos-e-imagens/minas-gerais.png/@@images/image" alt="Bandeira de Minas Gerais" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 5px;">CREA/MG</span>
+                     <span class="experience-tag"><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bandeira_do_Par%C3%A1.svg" alt="Bandeira do Pará" style="width: 15px; height: auto; vertical-align: middle; margin-right: 5px;">CREA/PA</span>
+                     <span class="experience-tag"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Bandeira_de_Minas_Gerais.svg" alt="Bandeira de Minas Gerais" style="width: 15px; height: auto; vertical-align: middle; margin-right: 5px;">CREA/MG</span>
 </div>
 </div>
             </div>
@@ -274,9 +276,8 @@
        * suas URLs por versões otimizadas para um carregamento mais rápido.
        */
       function optimizeImages() {
-        // Seleciona o avatar principal e as bandeiras dos estados.
-        // Ignora os 'shields' de certificação que já são otimizados.
-        const imagesToOptimize = document.querySelectorAll('.avatar, .experience-tag img');
+        // CORREÇÃO: Seleciona apenas o avatar principal para otimização.
+        const imagesToOptimize = document.querySelectorAll('.avatar');
         const proxyUrl = 'https://images.weserv.nl/?url=';
 
         imagesToOptimize.forEach(img => {
