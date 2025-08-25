@@ -6,22 +6,59 @@
     <title>Feed - Rodrigo M. Araujo</title>
     <link href="css/shorby-main.css" rel="stylesheet" />
     <link href="css/shorby-page.css" rel="stylesheet" />
-    <link href="css/emoji.css" rel="stylesheet">
+
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css'>
-    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
     <meta property="og:type" content="article" />
     <meta property="og:image" content="" />
     <meta property="og:title" content="Rodrigo M. Araujo" />
     <a rel="me" href="https://mastodon.com.br/@rodrigoaraujo"></a>
     <meta name="fediverse:creator" content="@rodrigoaraujo@mastodon.com.br">
-  
+
     <style>
       @media only screen and (max-width: 600px) {
         .toot { max-width: 95%; margin: 10px auto; }
         header { height: 200px; }
         header h1 { font-size: 1.5rem; }
         header p { font-size: 1rem; }
+      }
+    </style>
+    <style>
+      /* --- ESTILOS PARA O POPUP DE IMAGEM --- */
+      .image-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semi-transparente */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; /* Garante que o popup fique acima de outros elementos */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .image-popup-overlay.open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .image-popup-content {
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto; /* Adiciona scroll se a imagem for muito grande */
+      }
+
+      .image-popup-content img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        border-radius: 10px;
       }
     </style>
 </head>
@@ -40,7 +77,7 @@
       .toot .toot-content { font-size: 16px; margin-bottom: 10px; }
       .toot .toot-time { font-size: 12px; color: #666; text-align: right; }
       .toot .toot-hashtag { font-size: 12px; color: #666; text-align: left; }
-      .toot img { width: 100%; height: auto; margin-top: 10px; border-radius: 10px; }
+      .toot img { width: 100%; height: auto; margin-top: 10px; border-radius: 10px; cursor: pointer; /* Indica que a imagem é clicável */ }
       .toot audio, .toot video { width: 100%; margin-top: 10px; border-radius: 10px; }
       .toot iframe { width: 100%; height: 315px; margin-top: 10px; border-radius: 10px; }
 
@@ -50,12 +87,13 @@
       .password-box p { margin-bottom: 20px; color: #8A8A8E; }
       #password-input { padding: 12px; font-size: 1rem; border-radius: 10px; border: 1px solid #E5E5EA; margin-right: 10px; outline: none; }
       #password-submit { padding: 12px 20px; font-size: 1rem; border-radius: 10px; border: none; background-color: #007AFF; color: white; cursor: pointer; }
-      
+
       /* O CONTEÚDO PRINCIPAL COMEÇA OCULTO */
       #main-content {
           display: none;
       }
     </style>
+
     <script src="js/shorby.js"></script>
 
 <div id="password-overlay">
@@ -77,7 +115,7 @@
               </a>
             </div>
             <br><br>
-            <img src="https://images.weserv.nl/?url=sun9-29.userapi.com/impg/2lPb39Cfl3G5o_YUsqVEhLYKHe9FlgCNOuJC3A/PrA2hRImB7A.jpg%3Fsize%3D280x280%26quality%3D95%26sign%3D78e2a261e411e0534aac267c225ac7ac%26type%3Dalbum&q=30" class="avatar" alt="" title="Avatar">
+            <img src="https://sun9-29.userapi.com/impg/2lPb39Cfl3G5o_YUsqVEhLYKHe9FlgCNOuJC3A/PrA2hRImB7A.jpg?size=280x280&quality=95&sign=78e2a261e411e0534aac267c225ac7ac&type=album" class="avatar" alt="" title="Avatar">
             <p align="center" style="font-size: 0.9rem; color: rgb(0, 0, 0);"><b>Rodrigo M. Araujo</b><br>
             <small align="center" style="font-size: 0.9rem; color: gray;">rodrigo@engenheiro.org</small></p>
             <br>
@@ -87,28 +125,28 @@
             <div class="toot">
                 <div>
                   <div class="toot-content">Tô ficando grandão 💪🏻</div>
-                  <img src="https://images.weserv.nl/?url=sun9-14.userapi.com/impg/-t_rz4cEh5SlSiW2UXqkXa4p_AR2XSRt0fvjxw/2oxxOC-Hfo0.jpg%3Fsize%3D1620x2160%26quality%3D96%26sign%3D65766b5e6fc430f9ca2d987aed2cad55%26type%3Dalbum&q=30" alt="Imagem da postagem">
+                  <img src="https://sun9-14.userapi.com/impg/-t_rz4cEh5SlSiW2UXqkXa4p_AR2XSRt0fvjxw/2oxxOC-Hfo0.jpg?size=1620x2160&quality=96&sign=65766b5e6fc430f9ca2d987aed2cad55&type=album" alt="Imagem da postagem">
                   <div class="toot-time"><markyellow>18/11/2024, 06:28</markyellow></div>
                 </div>
             </div>
             <br><br>
             <div class="toot">
                 <div>
-                  <img src="https://images.weserv.nl/?url=sun9-40.userapi.com/impg/QlWtllw5vQoJahLm23m4Amrv-Iebn-d7uPQiIg/OhU1UPlzmA4.jpg%3Fsize%3D1214x2160%26quality%3D95%26sign%3D58724ae0ca3eb87b11dd9a65e594d7de%26type%3Dalbum&q=30" alt="Imagem da postagem">
+                  <img src="https://sun9-40.userapi.com/impg/QlWtllw5vQoJahLm23m4Amrv-Iebn-d7uPQiIg/OhU1UPlzmA4.jpg?size=1214x2160&quality=95&sign=58724ae0ca3eb87b11dd9a65e594d7de&type=album" alt="Imagem da postagem">
                   <div class="toot-time"><markyellow>12/11/2024, 11:58</markyellow></div>
                 </div>
             </div>
             <br><br>
             <div class="toot">
                 <div>
-                  <img src="https://images.weserv.nl/?url=sun9-24.userapi.com/impg/K0HqMc2f0e2PkYSEdUNkJ9yY2kUmyIkpJlQ3SQ/6pvtLK-IWxQ.jpg%3Fsize%3D1214x2160%26quality%3D95%26sign%3D8bebeb0e3a738ddd88d7070145313bd7%26type%3Dalbum&q=30" alt="Imagem da postagem">
+                  <img src="https://sun9-24.userapi.com/impg/K0HqMc2f0e2PkYSEdUNkJ9yY2kUmyIkpJlQ3SQ/6pvtLK-IWxQ.jpg?size=1214x2160&quality=95&sign=8bebeb0e3a738ddd88d7070145313bd7&type=album" alt="Imagem da postagem">
                   <div class="toot-time"><markyellow>11/11/2024, 06:41</markyellow></div>
                 </div>
             </div>
             <br><br>
             <div class="toot">
                 <div>
-                  <img src="https://images.weserv.nl/?url=sun9-8.userapi.com/impg/ILLYbAQIunfG03u04itImcQephnp3oJiiTA-sA/Abz2ee7IY0I.jpg%3Fsize%3D830x1280%26quality%3D95%26sign%3D7a68155cf1e8ed4c95855d16d33ea5fc%26type%3Dalbum&q=30" alt="Imagem da postagem">
+                  <img src="https://sun9-8.userapi.com/impg/ILLYbAQIunfG03u04itImcQephnp3oJiiTA-sA/Abz2ee7IY0I.jpg?size=830x1280&quality=95&sign=7a68155cf1e8ed4c95855d16d33ea5fc&type=album" alt="Imagem da postagem">
                   <div class="toot-time"><markyellow>17/10/2024, 18:09</markyellow></div>
                 </div>
             </div>
@@ -118,7 +156,59 @@
     </div>
 </div>
 
+<div class="image-popup-overlay">
+    <div class="image-popup-content">
+        <img src="" alt="Imagem Ampliada">
+    </div>
+</div>
+
 <script>
+    // --- SCRIPT DE OTIMIZAÇÃO AUTOMÁTICA DE IMAGENS ---
+    /**
+     * Esta função encontra todas as imagens na página e substitui
+     * suas URLs por versões otimizadas, reduzindo a qualidade em 80%.
+     */
+    function optimizeImages() {
+        // Seleciona o avatar e todas as imagens dentro dos posts
+        const images = document.querySelectorAll('.avatar, .toot img');
+        const proxyUrl = 'https://images.weserv.nl/?url=';
+
+        images.forEach(img => {
+            const originalSrc = img.src;
+
+            // Verifica se a imagem já não foi otimizada para evitar repetições
+            if (originalSrc && !originalSrc.includes('images.weserv.nl')) {
+
+                // Remove o "https://" do início do link para passar ao proxy
+                const cleanSrc = originalSrc.replace(/^https?:\/\//, '');
+
+                // Constrói a nova URL com qualidade reduzida (q=20 para 80% de compressão)
+                // O encodeURIComponent garante que caracteres especiais no link original não quebrem a URL do proxy.
+                const newOptimizedSrc = `${proxyUrl}${encodeURIComponent(cleanSrc)}&q=20`;
+
+                // Substitui o link da imagem pelo link otimizado
+                img.src = newOptimizedSrc;
+            }
+        });
+    }
+
+    // --- LÓGICA DO POPUP DE IMAGEM ---
+    const imagePopupOverlay = document.querySelector('.image-popup-overlay');
+    const imagePopupContent = document.querySelector('.image-popup-content img');
+    const tootImages = document.querySelectorAll('#tootFeed .toot img'); // Seleciona apenas as imagens dentro da timeline
+
+    tootImages.forEach(img => {
+        img.addEventListener('click', () => {
+            const optimizedSrc = img.src;
+            imagePopupContent.src = optimizedSrc;
+            imagePopupOverlay.classList.add('open');
+        });
+    });
+
+    imagePopupOverlay.addEventListener('click', () => {
+        imagePopupOverlay.classList.remove('open');
+    });
+
     // --- LÓGICA DA TELA DE SENHA ---
     const correctPassword = "rodrigo";
     const passwordOverlay = document.getElementById("password-overlay");
@@ -131,6 +221,10 @@
             // Senha correta: esconde a tela de senha e mostra o site
             passwordOverlay.style.display = "none";
             mainContent.style.display = "block";
+
+            // CHAMA A FUNÇÃO DE OTIMIZAÇÃO DE IMAGENS
+            optimizeImages();
+
         } else {
             // Senha errada: mostra alerta
             alert("Acesso não autorizado.");
