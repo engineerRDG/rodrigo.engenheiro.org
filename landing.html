@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoria Documental - Currículo Internacional</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* --- GLOBAL STYLES & STYLE GUIDE --- */
+        :root {
+            --primary-deep-blue: #1a2533;
+            --primary-vibrant-blue: #007bff;
+            --primary-blue-hover: #0056b3;
+            --attention-red: #e74c3c; /* VERMELHO PARA ATENÇÃO */
+            --attention-red-hover: #c0392b;
+            --text-dark: #1a2533;
+            --text-light: #f8f9fa;
+            --text-grey: #6c757d;
+            --background-light: #ffffff;
+            --background-grey: #f0f4f8;
+            --border-color: #dee2e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--background-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-vibrant-blue);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        }
+
+        .button-primary {
+            background-color: var(--primary-vibrant-blue);
+            color: var(--text-light);
+        }
+        
+        .button-primary:hover {
+            background-color: var(--primary-blue-hover);
+            transform: translateY(-2px);
+        }
+        
+        /* ANIMAÇÃO PARA O BOTÃO FINAL (VERMELHO) */
+        @keyframes pulse-red {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(231, 76, 60, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            }
+        }
+        
+        /* ANIMAÇÃO PARA O BOTÃO EM DESTAQUE (AZUL) */
+        @keyframes pulse-blue {
+            0% {
+                transform: scale(1.05); /* Inicia um pouco maior */
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+            }
+            70% {
+                transform: scale(1.08);
+                box-shadow: 0 0 0 12px rgba(0, 123, 255, 0);
+            }
+            100% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+            }
+        }
+
+
+        /* --- 1. HEADER & LOGO --- */
+        .header {
+            background-color: var(--background-light);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .header.sticky {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(45deg, var(--primary-deep-blue), var(--primary-vibrant-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        .nav-link a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* --- 2. HERO SECTION --- */
+        .hero {
+            background-image: linear-gradient(rgba(26, 37, 51, 0.8), rgba(26, 37, 51, 0.8)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* --- 3. PROBLEM & SOLUTION --- */
+        .problem-solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+        
+        .problem-solution-item {
+            padding: 30px;
+            border-radius: 12px;
+            background: var(--background-light);
+        }
+        
+        .problem-solution-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .problem-solution-item .icon-problem { color: #dc3545; }
+        .problem-solution-item .icon-solution { color: #28a745; }
+
+        .problem-solution-item h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- 4. COURSE DETAILS / FEATURES --- */
+        .features-section {
+            background-color: var(--background-grey);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            background-color: var(--background-light);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.1);
+        }
+
+        .feature-item .icon {
+            font-size: 3rem;
+            color: var(--primary-vibrant-blue);
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- 5. TESTIMONIALS --- */
+        .testimonial-carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .testimonial-card {
+            background-color: var(--background-light);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            margin: 10px;
+            min-width: 300px;
+            width: calc(33.333% - 20px);
+            flex-shrink: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid var(--primary-vibrant-blue);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--text-grey);
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+        }
+        
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5rem;
+            width: 45px;
+            height: 45px;
+            line-height: 1;
+        }
+        
+        .carousel-button:hover { background-color: var(--primary-blue-hover); }
+        .carousel-button.prev { left: -15px; }
+        .carousel-button.next { right: -15px; }
+
+        /* --- 6. PRICING --- */
+        #pricing { background-color: var(--background-grey); }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .pricing-plan {
+            background-color: var(--background-light);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-plan:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.1);
+        }
+
+        .pricing-plan.featured {
+            border-color: var(--primary-vibrant-blue);
+            transform: scale(1.05);
+        }
+
+        .button-featured {
+            animation: pulse-blue 2.5s infinite;
+        }
+        .pricing-plan.featured:hover .button-featured {
+             transform: translateY(-2px) scale(1.03);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* COR DO SELO ALTERADA PARA VERMELHO */
+            background-color: var(--attention-red);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .pricing-plan h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .pricing-plan .price { font-size: 2.8rem; font-weight: 700; color: var(--primary-vibrant-blue); margin-bottom: 5px; }
+        .pricing-plan .price s { font-size: 1.5rem; color: var(--text-grey); font-weight: 400; }
+        .pricing-plan .promo-desc { font-size: 0.9rem; color: #28a745; font-weight: 600; margin-bottom: 10px; }
+        .pricing-plan .description { font-size: 0.9rem; color: var(--text-grey); margin-bottom: 20px; }
+        .pricing-plan ul { list-style: none; padding: 0; text-align: left; margin-bottom: 25px; flex-grow: 1; }
+        .pricing-plan ul li { margin-bottom: 10px; }
+        .pricing-plan ul li::before { content: '✓'; color: #28a745; margin-right: 8px; font-weight: bold; }
+        .pricing-plan .button { width: 100%; margin-top: auto; }
+
+        /* --- 7. FINAL CTA --- */
+        .final-cta {
+            background-color: var(--primary-deep-blue);
+            color: var(--text-light);
+            text-align: center;
+        }
+        .final-cta .section-title,
+        .final-cta .section-title::after {
+            color: var(--text-light);
+            background-color: var(--text-light);
+        }
+        .final-cta p { max-width: 600px; margin: 0 auto 40px; }
+        
+        .final-cta .button {
+            background-color: var(--attention-red);
+            color: var(--text-light);
+            font-size: 1.3rem;
+            padding: 20px 40px;
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+            animation: pulse-red 2s infinite;
+        }
+        .final-cta .button:hover {
+            background-color: var(--attention-red-hover);
+            transform: translateY(-3px) scale(1.05);
+        }
+        
+        /* --- 8. FOOTER --- */
+        .footer {
+            background-color: var(--primary-deep-blue);
+            color: var(--text-grey);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .footer a { color: var(--primary-vibrant-blue); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .footer .company-info { margin-top: 15px; font-size: 0.8rem; opacity: 0.7; }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .testimonial-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title { font-size: 2rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .problem-solution-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-plan.featured { transform: scale(1); }
+            .testimonial-card {
+                min-width: 280px;
+                width: calc(100% - 20px);
+            }
+            .carousel-button.prev { left: 5px; }
+            .carousel-button.next { right: 5px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="#" class="logo">Currículo Internacional</a>
+            <nav class="nav-link">
+                <a href="#pricing">Planos de Mentoria</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>O Fim do "Sem Experiência, Sem Vaga". Sua Carreira Internacional Começa Agora.</h1>
+                <p>Nós inserimos no seu currículo a experiência profissional que os recrutadores EXIGEM. Receba um atestado técnico de uma empresa de Londres e transforme candidaturas ignoradas em propostas de emprego.</p>
+                <a href="#pricing" class="button button-primary">Destravar Minha Carreira AGORA</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="problem-solution-grid">
+                    <div class="problem-solution-item">
+                        <div class="icon icon-problem"><i class="fa-solid fa-file-circle-xmark"></i></div>
+                        <h2>Seu Potencial Está Invisível Para o Mercado.</h2>
+                        <p>Você se dedica, estuda, constrói um currículo impecável... e o envia para o silêncio. Cada 'não' ou falta de resposta é um muro. A verdade? O mercado não lê seu potencial, ele busca uma palavra: <strong>EXPERIÊNCIA</strong>. Sem ela, seu talento permanece invisível, trancado no ciclo frustrante que custa seu tempo e seus sonhos.</p>
+                    </div>
+                    <div class="problem-solution-item">
+                        <div class="icon icon-solution"><i class="fa-solid fa-key"></i></div>
+                        <h2>A Chave Que Abre Todas as Portas.</h2>
+                        <p>Agora, imagine entregar ao recrutador a chave mestra: um <strong>Atestado de Capacidade Técnica INTERNACIONAL</strong>. Com ele, você não pede uma chance, você a conquista. Nós transformamos sua teoria em prática validada pela BENWIL Engineering LTD, de Londres, dando ao seu currículo o peso e a autoridade para ser colocado no topo da pilha. A barreira desaparece. As portas se abrem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section features-section">
+            <div class="container">
+                <h2 class="section-title">A Vantagem Injusta Que Seu Currículo Precisa</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="icon"><i class="fa-solid fa-rocket"></i></div>
+                        <h3>Credibilidade Instantânea</h3>
+                        <p>Um atestado de Londres no seu currículo não é apenas uma linha, é uma declaração. Ele gera no recrutador um respeito imediato pela sua capacidade e ambição global.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon"><i class="fa-solid fa-globe"></i></div>
+                        <h3>Diferenciação Absoluta</h3>
+                        <p>Enquanto 99% dos candidatos são iguais, você se torna único. A experiência internacional é o fator de desempate que coloca seu nome em negrito na lista de finalistas.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon"><i class="fa-solid fa-file-shield"></i></div>
+                        <h3>Autoridade Inquestionável</h3>
+                        <p>Este não é um certificado de curso, é um documento formal e verificável de capacidade técnica. Ele elimina dúvidas e prova que você está pronto para entregar resultados.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <h3>Resultados Práticos, Não Teoria</h3>
+                        <p>O mercado quer saber o que você JÁ FEZ. Nosso atestado é a prova definitiva da sua vivência prática, comunicando valor real e imediato para a empresa.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon"><i class="fa-solid fa-filter-circle-dollar"></i></div>
+                        <h3>Vença os Robôs de RH</h3>
+                        <p>A palavra-chave "experiência" em uma empresa internacional garante que seu currículo passe pelos filtros automáticos (ATS) que eliminam a maioria dos candidatos.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon"><i class="fa-solid fa-forward-fast"></i></div>
+                        <h3>Salte Anos na Sua Carreira</h3>
+                        <p>Por que esperar? Obtenha hoje a experiência que outros levam anos para construir. É o atalho mais inteligente para as vagas e salários que você realmente deseja.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Veja Quem Decidiu Sair na Frente</h2>
+                <div class="testimonial-carousel-container">
+                    <div class="testimonial-track">
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/80?img=11" alt="Foto de Carlos F.">
+                            <p>"Consegui minha primeira vaga como Analista depois de adicionar o atestado da BENWIL. Antes, nem me chamavam para entrevistas. Foi a melhor decisão!"</p>
+                            <span class="author">- Carlos F., Analista de Processos Jr.</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/80?img=32" alt="Foto de Juliana M.">
+                            <p>"Eu tinha acabado a faculdade e estava perdida. O atestado me deu a 'experiência' que faltava. Em menos de 2 meses, fui contratada!"</p>
+                            <span class="author">- Juliana M., Assistente Administrativa</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/80?img=68" alt="Foto de Ricardo S.">
+                            <p>"O atestado de Gerente foi crucial para minha promoção. A experiência internacional comprovada fez toda a diferença na avaliação dos diretores."</p>
+                            <span class="author">- Ricardo S., Gerente de Projetos</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/80?img=33" alt="Foto de Ana P.">
+                            <p>"Como recém-formada, o atestado abriu as portas do mercado. Consegui um estágio excelente graças a essa comprovação de vivência prática."</p>
+                            <span class="author">- Ana P., Estagiária de Engenharia</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/80?img=51" alt="Foto de Bruno G.">
+                            <p>"Estava tentando uma transição de carreira e ninguém me dava uma chance. Com o atestado de Analista, provei que tinha as competências necessárias. Deu certo!"</p>
+                            <span class="author">- Bruno G., Analista de BI</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/80?img=45" alt="Foto de Mariana C.">
+                            <p>"Eu competia com centenas por uma vaga de assistente. Depois que adicionei a experiência internacional, fui chamada para 3 entrevistas na mesma semana."</p>
+                            <span class="author">- Mariana C., Assistente de Marketing</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/80?img=22" alt="Foto de Felipe A.">
+                            <p>"Voltar ao mercado depois de um tempo parado foi difícil. O atestado atualizou meu currículo e mostrou que eu estava ativo e relevante. Fui recontratado rapidamente."</p>
+                            <span class="author">- Felipe A., Coordenador de Logística</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/80?img=15" alt="Foto de Letícia R.">
+                            <p>"O sonho era entrar numa multinacional. O atestado da BENWIL foi o 'empurrão' que faltava. A experiência em uma empresa de Londres chamou muita atenção."</p>
+                            <span class="author">- Letícia R., Trainee em Multinacional</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://i.pravatar.cc/80?img=7" alt="Foto de Tiago N.">
+                            <p>"Investimento com retorno garantido. O valor do atestado foi pago com o primeiro salário do novo emprego que consegui graças a ele. Simples assim."</p>
+                            <span class="author">- Tiago N., Engenheiro de Produção</span>
+                        </div>
+                    </div>
+                    <button class="carousel-button prev" aria-label="Anterior">&#10094;</button>
+                    <button class="carousel-button next" aria-label="Próximo">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <div class="container">
+                <h2 class="section-title">Escolha o Nível da Sua Experiência</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-plan">
+                        <h3>Estagiário</h3>
+                        <div class="price">R$ 500</div>
+                        <p class="description">O primeiro passo para um currículo que não pode ser ignorado.</p>
+                        <ul>
+                            <li>Atesta tarefas básicas</li>
+                            <li>Aprendizado supervisionado</li>
+                            <li>Suporte para descrição no currículo</li>
+                        </ul>
+                        <a href="#" class="button button-primary">Começar Com Impacto</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <h3>Assistente</h3>
+                        <div class="price"><s>R$ 2.000</s> R$ 1.000</div>
+                        <p class="promo-desc">PROMOÇÃO DE 50% HOJE!</p>
+                        <p class="description">A experiência definitiva para conquistar sua primeira vaga efetiva.</p>
+                        <ul>
+                            <li>Atesta suporte a projetos</li>
+                            <li>Execução de processos</li>
+                            <li><strong>Destaque GARANTIDO no currículo!</strong></li>
+                        </ul>
+                        <a href="#" class="button button-primary">Conquistar Minha Vaga</a>
+                    </div>
+                    <div class="pricing-plan featured">
+                        <div class="badge">MAIS POPULAR</div>
+                        <h3>Analista</h3>
+                        <div class="price"><s>R$ 4.000</s> R$ 2.000</div>
+                        <p class="promo-desc">PROMOÇÃO DE 50% HOJE!</p>
+                        <p class="description">A autoridade que você precisa para assumir posições de análise e decisão.</p>
+                        <ul>
+                            <li>Atesta análise de dados</li>
+                            <li>Propostas de solução</li>
+                            <li>Consultoria para LinkedIn</li>
+                        </ul>
+                        <a href="#" class="button button-primary button-featured">Virar Analista</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <h3>Gerente</h3>
+                        <div class="price"><s>R$ 6.000</s> R$ 3.000</div>
+                        <p class="promo-desc">PROMOÇÃO DE 50% HOJE!</p>
+                        <p class="description">O passaporte para cargos de liderança, gestão e maiores salários.</p>
+                        <ul>
+                            <li>Atesta liderança e gestão</li>
+                            <li>Gestão de projetos</li>
+                            <li>Sessão de coaching de carreira</li>
+                        </ul>
+                        <a href="#" class="button button-primary">Assumir a Liderança</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section final-cta">
+            <div class="container">
+                <h2 class="section-title">Seu Futuro Profissional Não Pode Esperar.</h2>
+                <p>Cada dia que você adia é uma oportunidade perdida para um concorrente que decidiu agir. A vaga dos seus sonhos não vai esperar. Invista na única coisa que garante o retorno: sua própria carreira. A decisão é sua. O momento é AGORA.</p>
+                <a href="#pricing" class="button">QUERO MEU ATESTADO DE LONDRES AGORA!</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> BENWIL Engineering LTD - Transformando Currículos, Construindo Carreiras.</p>
+            <p>
+                <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a>
+            </p>
+            <div class="company-info">
+                <p>BENWIL Engineering LTD | 128 City Road, London, EC1V 2NX, United Kingdom</p>
+                <p>Uma empresa do grupo engenheiro.org LLC.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- SCRIPT PARA HEADER STICKY ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // --- SCRIPT PARA ATUALIZAR ANO NO FOOTER ---
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // --- SCRIPT DO CARROSSEL DE DEPOIMENTOS ---
+        const track = document.querySelector('.testimonial-track');
+        if (track) {
+            const cards = Array.from(track.children);
+            const nextButton = document.querySelector('.carousel-button.next');
+            const prevButton = document.querySelector('.carousel-button.prev');
+            let cardWidth = cards.length > 0 ? cards[0].getBoundingClientRect().width + parseInt(getComputedStyle(cards[0]).marginLeft) * 2 : 0;
+            let currentIndex = 0;
+            let itemsVisible = 1;
+
+            function updateCarousel() {
+                if(cards.length === 0) return;
+                cardWidth = cards[0].getBoundingClientRect().width + (parseInt(getComputedStyle(cards[0]).marginLeft) * 2);
+                itemsVisible = Math.floor(track.parentElement.offsetWidth / cardWidth);
+                if(itemsVisible < 1) itemsVisible = 1;
+
+                const maxIndex = cards.length - itemsVisible;
+                if (currentIndex > maxIndex) {
+                    currentIndex = maxIndex < 0 ? 0 : maxIndex;
+                }
+
+                track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+                
+                prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+                nextButton.style.display = currentIndex >= maxIndex ? 'none' : 'block';
+            }
+
+            nextButton.addEventListener('click', () => {
+                const maxIndex = cards.length - itemsVisible;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+
+            prevButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                currentIndex = 0;
+                updateCarousel();
+            });
+            
+            updateCarousel();
+        }
+    </script>
+
+</body>
+</html>
