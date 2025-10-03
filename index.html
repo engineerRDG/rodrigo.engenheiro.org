@@ -358,7 +358,7 @@
           const originalSrc = img.src;
           if (originalSrc && !originalSrc.includes('images.weserv.nl')) {
             const cleanSrc = originalSrc.replace(/^https?:\/\//, '');
-            const newOptimizedSrc = `${proxyUrl}${encodeURIComponent(cleanSrc)}&q=20`;
+            const newOptimizedSrc = `${proxyUrl}${encodeURIComponent(cleanSrc)}&q=70`;
             img.src = newOptimizedSrc;
           }
         });
@@ -368,4 +368,5 @@
     </script>
     </body>
     </html>
+
 
