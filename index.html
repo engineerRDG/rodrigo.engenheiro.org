@@ -348,26 +348,10 @@
         var content = document.getElementById("contato-content");
         content.style.display = content.style.display === "none" ? "block" : "none";
       }
-
-      // --- SCRIPT DE OTIMIZAÇÃO AUTOMÁTICA DE IMAGENS ---
-      function optimizeImages() {
-        const imagesToOptimize = document.querySelectorAll('.avatar');
-        const proxyUrl = 'https://images.weserv.nl/?url=';
-
-        imagesToOptimize.forEach(img => {
-          const originalSrc = img.src;
-          if (originalSrc && !originalSrc.includes('images.weserv.nl')) {
-            const cleanSrc = originalSrc.replace(/^https?:\/\//, '');
-            const newOptimizedSrc = `${proxyUrl}${encodeURIComponent(cleanSrc)}&q=99`;
-            img.src = newOptimizedSrc;
-          }
-        });
-      }
-
-      document.addEventListener('DOMContentLoaded', optimizeImages);
     </script>
     </body>
     </html>
+
 
 
 
